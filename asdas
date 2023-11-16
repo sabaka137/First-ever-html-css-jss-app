@@ -1,0 +1,95 @@
+               <div class="main__slider">
+                   <div class="main__slider__line">
+                        <div class="main__slide ">
+                            <div class="main__slide__content">
+                                <div class="main__slide1 active__text1">Купить аккаунт Brawl Stars1</div>
+                                <div class="main__slide2">Божество Властелин или же легенда</div>
+                                <div class="header__button">
+                                    <div class="button__set">
+                                        <span class="button__text">
+                                            Подробнее
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main__slide ">
+                            <div class="main__slide__content">
+                                <div class="main__slide1">Купить аккаунт Brawl Stars2</div>
+                                <div class="main__slide2">Божество Властелин или же легенда</div>
+                                <div class="header__button">
+                                    <div class="button__set">
+                                        <span class="button__text">
+                                            Подробнее
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="main__slide ">
+                            <div class="main__slide__content">
+                                <div class="main__slide1">Купить аккаунт Brawl Stars3</div>
+                                <div class="main__slide2">Божество Властелин или же легенда</div>
+                                <div class="header__button">
+                                    <div class="button__set">
+                                        <span class="button__text">
+                                            Подробнее
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+               </div>
+
+
+
+
+
+               let slidesMain = document.querySelectorAll('.main__slide')
+let sliderLineMain = document.querySelector('.main__slider__line')
+let j = 0;
+let widthMain
+let slideText1 = document.querySelectorAll('.main__slide1')
+let slideText2 = document.querySelectorAll('.main__slide2')
+
+function init(){
+    widthMain = document.querySelector('.main__slide').offsetWidth
+    console.log(j)  
+    sliderLineMain.style.width = widthMain * slidesMain.length
+    test()
+    testOp()
+    sliderRoll()
+}
+window.addEventListener('resize',init)
+init()
+
+function sliderRoll(){
+    sliderLineMain.style.transform = 'translate(-'+widthMain * j + 'px)'
+    j++;
+    if(j>=slidesMain.length){
+     j = 0
+    }  
+}
+
+function test(){
+for(let k = 0;k<slidesMain.length;k++){
+    slidesMain[k].style.opacity = '0'
+    
+  
+}
+}
+
+function testOp(){
+    for(let p = 0;p<slidesMain.length;p++){
+        slidesMain[j].style.opacity = '1'
+      
+   
+    }
+}
+
+setInterval(init,4000)
+
+
